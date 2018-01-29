@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+
     <title>Proof of Purchase</title>
   </head>
   <body>
@@ -15,10 +18,11 @@
     <main>
       <form id="create-user">
         <h2>Create User</h2>
-        <input type="text" id="name" placeholder="Please enter your name...">
-        <input type="text" id="email" placeholder="Please enter your email address...">
-        <input type="text" id="username" placeholder="Please create username...">
-        <input type="text" id="email" placeholder="Please create password...">
+        <input type="text" id="name" placeholder="Please enter your name..." required>
+        <input type="text" id="email" placeholder="Please enter your email address..." required>
+        <input type="text" id="username" placeholder="Please create username..." required>
+        <input type="text" id="email" placeholder="Please create password..." required>
+        <button type="submit">Submit and return to the home page</button>      
       </form>
     </main>
     <footer>

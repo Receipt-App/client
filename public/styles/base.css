@@ -1,0 +1,35 @@
+header {
+  background-color: #444;
+  color: #fff;
+  padding: 20px;
+}
+h1 {
+  font-size: 30px;
+}
+h2 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 10px;
+}
+
+main {
+  background-image: url('../assets/Background_2.png');
+  background-repeat: no-repeat;
+}
+
+input {
+  display: block;
+  width: 70%;
+  margin: 20px;
+}
+form {
+  padding: 20px;
+}
+
+footer {
+  background-color: #444;
+  color: #fff;
+  padding: 20px;
+}
