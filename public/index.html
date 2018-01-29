@@ -12,16 +12,27 @@
   </head>
   <body>
     <header>
-      <h1>Proof Of Purchase</h1>
-      <h3>Your Google-based reciept tracker</h3>
+      <img id="logo" src="assets/Logo.png" alt="Logo">
+      <h1 class="title">Proof Of Purchase</h1>
+      <h3 class="">Your Google-based reciept tracker</h3>
     </header>
     <main>
+      <section id="login"> 
+        <form>
+          <h2>Login</h2>
+          <input type="text" name="username" placeholder="Please enter your username" required>
+          <input type="password" name="psw" placeholder="Please enter your password" required>
+          <button type="submit">Login</button>
+          <p>Don't have an accout?</p><a href="/new"> Create one!</a>
+        </form>
+      </section>
+
       <form id="create-user">
         <h2>Create User</h2>
         <input type="text" id="name" placeholder="Please enter your name..." required>
         <input type="text" id="email" placeholder="Please enter your email address..." required>
         <input type="text" id="username" placeholder="Please create username..." required>
-        <input type="text" id="email" placeholder="Please create password..." required>
+        <input type="text" id="password" placeholder="Please create password..." required>
         <button type="submit">Submit and return to the home page</button>      
       </form>
     </main>
