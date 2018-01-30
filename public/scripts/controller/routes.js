@@ -1,10 +1,13 @@
 'use strict';
 
-page('', view.home, user.add );
-page('/login', user.loadUsers, view.login, user.checkUser );
-page('/profile', user.loadUserData, view.profUser);
+page('/', loginView.init);
+page('/login', loginView.init);
+page('/aboutus', aboutView.init);
+page('/profile', profileView.init)
+// page('/profile', user.userData, view.profUser);
 // page('/upload');
 // page('upload');
 
+page('/new', createView.init);
 
 page();
