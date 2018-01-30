@@ -1,8 +1,8 @@
 'use strict';
 
 page('/', view.home, user.add );
-page('/login', user.loadUsers, user.checkUser );
-page('/profile', view.profUser, user.dataUser );
+page('/login', view.login, user.checkUser );
+page('/profile', user.dataUser, view.profUser);
 page('/upload');
 page('upload');
 

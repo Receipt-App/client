@@ -15,6 +15,7 @@
 
 
     view.login = function() {
+        user.loadUsers();
         //hide all stuff
         //show login window
         console.log('login');
