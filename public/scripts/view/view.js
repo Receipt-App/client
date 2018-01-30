@@ -4,6 +4,8 @@
 (function(module) {
     const view = {};
 
+    ////homepage
+
     view.home = function(ctx, next) {
         $('upload').css('display', 'none');
         $('graph').css('display', 'none');
@@ -13,30 +15,38 @@
             e.preventDefault();
             let data = {
             name: e.target.name.value,
-            username: e.target.username.value,
-            email: e.target.email.value
+            email: e.target.email.value,
+            username: e.target.username.value
             }
             ctx.newuser = data;
 
         });
         next();     
         //sign in or login button 
-
-        // login redirect to ('/login')
-  
+        // login redirect to ('/login')  
         console.log('home page');
 
     }
 
+    //login to the acount
+    view.login = function(ctx, next) {
+        $('create-user').css('display', 'none');
+        $('upload').css('display', 'none');
+        $('graph').css('display', 'none');
+        $('about-us').css('display', 'none');
 
-    view.login = function() {
-        user.loadUsers();
+        $('login').on('submit', function(e) {
+            e.preventDefault();
+            ctx.curentUser = e.targer.username.value;
+        });
+        next();
         //hide all stuff
         //show login window
         console.log('login');
 
     }
 
+    // if no username
     view.noUserName = function() {
         console.log('no username') 
         /// same as login but red user name don't exist
@@ -45,10 +55,12 @@
     }
 
 
-    
+    // render information about user
     view.profUser = function(ctx,next) {
-        //hide all stuf
-        //show user page
+        $('create-user').css('display', 'none');
+        $('upload').css('display', 'none');
+        $('graph').css('display', 'none');
+        $('about-us').css('display', 'none');
         console.log('userpage');
         
     }
