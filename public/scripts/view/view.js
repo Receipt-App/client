@@ -1,15 +1,29 @@
 'use strict';
 
+
 (function(module) {
     const view = {};
 
-    view.home = function() {
-        
+    view.home = function(ctx, next) {
+        $('upload').css('display', 'none');
+        $('graph').css('display', 'none');
+        $('about-us').css('display', 'none');
+
+        $('create-user').on('submit', function(e) {
+            e.preventDefault();
+            let data = {
+            name: e.target.name.value,
+            username: e.target.username.value,
+            email: e.target.email.value
+            }
+            ctx.newuser = data;
+
+        });
+        next();     
         //sign in or login button 
 
         // login redirect to ('/login')
-        // sign in show the form ()
-
+  
         console.log('home page');
 
     }
