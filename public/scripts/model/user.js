@@ -2,7 +2,7 @@
 
 (function(module) {
 
-    const user = {};
+    let user = {};
 
     user.add = function(ctx, next) {
         let data = ctx.newuser;
@@ -25,7 +25,7 @@
         $.get(`${__API_URL__}/users/allusers`)
            .then(results => {
                ctx.allusers = results;
-               localStorage.allusers = JSON.stringify(results;
+               localStorage.allusers = JSON.stringify(results);
            });
         next();
         console.log('load users from database');
