@@ -11,7 +11,8 @@
         let data = ctx.newuser;
         console.log('data for the post ', data);
         $.post(`${__API_URL__}/users/allusers`, data)
-            .then(page('/login'));
+        .then(console.log('data send to the server '));
+        page.redirect('/');
         }
 
 
@@ -33,11 +34,11 @@
 
          if (arr.includes(ctx.curentUser.toUpperCase()) === true){
             console.log('final user' , ctx.curentUser);
-            next();           
+            page('/profile');           
 
         } else {
             console.log('NO USERNAME');
-            page('/login');
+            page('/');
 
         }
     }
