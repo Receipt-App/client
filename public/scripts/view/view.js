@@ -4,6 +4,7 @@
     const view = {};
 
     view.home = function() {
+        
         //sign in or login button 
 
         // login redirect to ('/login')
@@ -27,7 +28,7 @@
         /// same as login but red user name don't exist
         console.log('login');
         view.login();
-
+    }
 
 
     

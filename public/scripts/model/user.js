@@ -14,8 +14,8 @@
 
     user.loadUsers = function(ctx, next) {
         // add ajax to load users
+        //and save to local storage????????????
         ctx.users = data;
-        view.login();
         next();
         console.log('load users from database');
 
@@ -29,9 +29,11 @@
             cts.curentUser  = username;
         } else {
             console.log('NO USERNAME');
+            view.noUserName();
             // clean page and prompt user dont exist 
-        }
 
+        }
+        red
         next();           
     }
 
