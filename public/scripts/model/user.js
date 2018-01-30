@@ -2,32 +2,26 @@
 
 (function(module) {
 
+    var __API_URL__ = "https://pop-server-staging.herokuapp.com"
+
     const user = {};
 
     user.add = function(ctx, next) {
+        // console.log(ctx);
         let data = ctx.newuser;
-        $.ajax({
-            url: `${__API_URL__ }/users/allusers`,
-            method: 'POST',
-            data: {
-                name: data.name,
-                email: data.email,
-                username: data.username
-            },
-        })
-        
-        console.log('add new user');
-
-    }
+        console.log('data for the post ', data);
+        $.post(`${__API_URL__}/users/allusers`, data)
+            .then(page('/login'));
+        }
 
 
     user.loadUsers = function(ctx, next) {
         $.get(`${__API_URL__}/users/allusers`)
            .then(results => {
-               ctx.allusers = results;
-               localStorage.allusers = JSON.stringify(results;
+               localStorage.allusers = JSON.stringify(results.rows);
+               console.log(localStorage);
+               next();
            });
-        next();
         console.log('load users from database');
     }
 
@@ -36,6 +30,7 @@
         var username = ctx.curentUser;
         if (ctx.users.toUperCase().includes(username.toUperCase()) === true){
             cts.curentUser  = username;
+            console.log(ctx.curentUser);
             next();           
 
         } else {
@@ -47,7 +42,7 @@
 
     user.loadUserData = function(cts, next) {
         data = ctx.curentUser;
-         $.get(`${__API_URL__}/users/receipts`, data)
+         $.get(`${__API_URL__}/users/cards`, data)
            .then(results => {
                ctx.userData = results;
             });
@@ -55,4 +50,5 @@
     }
         
     module.user = user;
+
 })(window);

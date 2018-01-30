@@ -16,17 +16,18 @@
       <h3>Your Google-based reciept tracker</h3>
       <section id="main-nav">
        <nav><a href="/">Home</a></nav>
-       <nav><a href="/login">Upload a Receipt</a></nav>
+       <nav><a href="/login">Upload a card</a></nav>
        <nav><a href="/graph">Your Spending</a></nav>
        <nav><a href="/profile">Profile</a></nav>
       </section>
       <img id="logo" src="assets/Logo.png" alt="Logo">
     </header>
     <main>
+      
       <section id="login"> 
         <form>
           <h2>Login</h2>
-          <input type="text" name="username" placeholder="Please enter your username" required>
+          <input type="text" id="user-input" name="username" placeholder="Please enter your username" required>
           <input type="password" name="psw" placeholder="Please enter your password" required>
           <button type="submit">Login</button>
           <p>Don't have an accout?</p><a href="/new"> Create one!</a>
@@ -74,11 +75,13 @@
       <nav><a href="/aboutus">About Us</a></nav>
     </footer>
     
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-    <script src="scripts/controller/routes.js"></script>
     <script src="scripts/model/user.js"></script>
     <script src="scripts/view/view.js"></script>    
+    <script src="scripts/controller/routes.js"></script>
     
   </body>
 </html>
