@@ -18,8 +18,8 @@
     user.loadUsers = function(ctx, next) {
         $.get(`${__API_URL__}/users/allusers`)
            .then(results => {
-               localStorage.allusers = JSON.stringify(results.rows);
-               console.log(localStorage);
+               ctx.allusers = results.rows;
+               console.log(ctx.allusers);
                next();
            });
         console.log('load users from database');
@@ -27,10 +27,12 @@
 
     //// ask about 
     user.checkUser = function(ctx, next) {
-        var username = ctx.curentUser;
-        if (ctx.users.toUperCase().includes(username.toUperCase()) === true){
-            cts.curentUser  = username;
-            console.log(ctx.curentUser);
+        var arr = [];
+        ctx.allusers.map(item=>arr.push (item.username.toUpperCase()));
+        console.log(arr);
+
+         if (arr.includes(ctx.curentUser.toUpperCase()) === true){
+            console.log('final user' , ctx.curentUser);
             next();           
 
         } else {

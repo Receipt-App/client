@@ -1,6 +1,6 @@
 'use strict';
 
-page('/', loginView.init);
+page('/', user.loadUsers, loginView.init, user.checkUser);
 page('/login', loginView.init);
 page('/aboutus', aboutView.init);
 page('/profile', profileView.init)

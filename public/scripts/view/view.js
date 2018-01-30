@@ -27,22 +27,22 @@
     }
 
     //login to the acount
-    view.login = function(ctx, next) {
-        $('#create-user').css('display', 'none');
-        $('#upload').css('display', 'none');
-        $('#graph').css('display', 'none');
-        $('#about-us').css('display', 'none');
+    // view.login = function(ctx, next) {
+    //     $('#create-user').css('display', 'none');
+    //     $('#upload').css('display', 'none');
+    //     $('#graph').css('display', 'none');
+    //     $('#about-us').css('display', 'none');
 
 
-        $('#login').on('submit', function(e) {
-            e.preventDefault();
-            let data = e.target.username.value;
-            console.log(e.target.username.value);
-            // next();
-        });
-        console.log('login');
+    //     $('#login').on('submit', function(e) {
+    //         e.preventDefault();
+    //         let data = e.target.username.value;
+    //         console.log(e.target.username.value);
+    //         // next();
+    //     });
+    //     console.log('login');
 
-    }
+    // }
 
     // if no username
     view.noUserName = function() {
