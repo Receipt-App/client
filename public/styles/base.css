@@ -1,35 +1,95 @@
+body {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 header {
   background-color: #444;
   color: #fff;
-  padding: 20px;
+  padding-left: 120px;
+  text-align: left;
+}
+#logo {
+  float: left;
+}
+.title {
+  padding: 30px;
+  /* float: left; */
 }
 h1 {
   font-size: 30px;
 }
 h2 {
   font-size: 20px;
+  border: 1px black solid;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.899);
+
 }
 
 p {
+  padding: 5px;
   font-size: 10px;
 }
 
 main {
   background-image: url('../assets/Background_2.png');
-  background-repeat: no-repeat;
+  background-repeat: repeat;
+  width: 95%;
+  margin: 0 auto;
+}
+section {
+  text-align: center;
 }
 
+#about-us li {
+  text-align: left;
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.637);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#about-us li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#about-us p {
+  font-size: 12px;
+}
 input {
   display: block;
-  width: 70%;
-  margin: 20px;
+  width: 80%;
+  margin: 15px auto;
+  border-radius: 5px;
 }
 form {
   padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.canvas {
+  height: 500px;
+  width: 500px;
+  margin: 0 auto;
 }
 
 footer {
   background-color: #444;
   color: #fff;
   padding: 20px;
+  text-align: center;
+}
+
+button {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: black;
+  color: #fff;
 }

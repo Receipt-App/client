@@ -20,21 +20,61 @@
        <nav><a href="/graph">Your Spending</a></nav>
        <nav><a href="/profile">Profile</a></nav>
       </section>
+      <img id="logo" src="assets/Logo.png" alt="Logo">
     </header>
     <main>
+      <section id="login"> 
+        <form>
+          <h2>Login</h2>
+          <input type="text" name="username" placeholder="Please enter your username" required>
+          <input type="password" name="psw" placeholder="Please enter your password" required>
+          <button type="submit">Login</button>
+          <p>Don't have an accout?</p><a href="/new"> Create one!</a>
+        </form>
+      </section>
+
       <form id="create-user">
         <h2>Create User</h2>
         <input type="text" id="name" placeholder="Please enter your name..." required>
         <input type="text" id="email" placeholder="Please enter your email address..." required>
         <input type="text" id="username" placeholder="Please create username..." required>
-        <input type="text" id="email" placeholder="Please create password..." required>
+        <input type="text" id="password" placeholder="Please create password..." required>
         <button type="submit">Submit and return to the home page</button>      
       </form>
+      <section id="upload">
+        <h2>Upload a Picture of your reciept</h2>
+        <div class="canvas"></div>
+      </section>
+      <section id="graph">
+        <h2>How you are spending your money</h2>
+        <div class="canvas"></div>
+      </section>
+      <section id="about-us">
+        <h2>About Us</h2>
+        <ul>
+          <li>
+            <h3>Alex Bowers</h3>
+            <p>I am interested in becoming a full stack javascript developer. A long term goal is moving into the game development sphere.</p>
+          </li>
+          <li>
+            <h3>Christian Miller</h3>
+            <p></p>
+          </li>
+          <li>
+            <h3>Andrii Glukhyi</h3>
+            <p>I am interested in becoming a full stack PYTHON developer. Very interested in machine learning sphere.</p>
+          </li>
+        </ul>
+      </section>
+
+
     </main>
     <footer>
       <p>Created by: Alex Bowers, Christian Miller and Andrii Glukhyi</p>
       <nav><a href="/aboutus">About Us</a></nav>
     </footer>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
