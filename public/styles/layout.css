@@ -18,11 +18,11 @@
     width: 50%;
     height: 400px;
     background-color:black;
-  }
+    }
   #two{
     background-color:blue;
     display: inline-block;
     width: 49%;
     height: 400px;
-  }
+    }
   }
