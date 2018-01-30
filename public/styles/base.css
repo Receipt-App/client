@@ -1,6 +1,7 @@
 body {
   max-width: 960px;
   margin: 0 auto;
+  padding: 0;
 }
 
 header {
@@ -39,9 +40,9 @@ main {
   width: 95%;
   margin: 0 auto;
 }
-section {
+/* section {
   text-align: center;
-}
+} */
 
 #about-us li {
   text-align: left;
@@ -59,7 +60,7 @@ section {
 #about-us p {
   font-size: 12px;
 }
-input {
+.input-field {
   display: block;
   width: 80%;
   margin: 15px auto;
