@@ -19,7 +19,6 @@
       next();
     });
   };
-
   module.loginView = loginView;
 })(window);
 
