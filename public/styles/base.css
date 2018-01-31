@@ -17,9 +17,9 @@ header {
   font-size: 28px;
 }
 
-img {
-  height: 150px;
-  width: 150px;
+.circle {
+  height: 90px;
+  width: 90px;
   border-radius: 100%;
   border-style: solid;
   border-color: darkgrey;
@@ -28,6 +28,7 @@ img {
 
 #logo {
   float: left;
+  
 }
 
 .title {
@@ -49,14 +50,16 @@ h2 {
 
 h3 {
   font-family: 'Patrick Hand SC', cursive;
+  float: left;
 }
+
 
 p {
   padding: 5px;
   font-size: 10px;
 }
 
-div {
+h4 {
   font-size: 14px;
   font-family: 'PT Serif', serif;
 }
