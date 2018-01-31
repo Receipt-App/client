@@ -6,43 +6,43 @@
 
     ////homepage
 
-    view.home = function(ctx, next) {
-        $('#upload').css('display', 'none');
-        $('#graph').css('display', 'none');
-        $('#about-us').css('display', 'none');
-        // $('#login').css('display', 'none');
+    // view.home = function(ctx, next) {
+    //     $('#upload').css('display', 'none');
+    //     $('#graph').css('display', 'none');
+    //     $('#about-us').css('display', 'none');
+    //     // $('#login').css('display', 'none');
         
 
-        $('#create-user').on('submit', function(e) {
-            e.preventDefault();
-            let data = {
-            name: e.target.name.value,
-            email: e.target.email.value,
-            username: e.target.username.value
-            };
-            ctx.newuser = data;
-            console.log('data from form', ctx.newuser);
-            next();
-        });
-    }
+    //     $('#create-user').on('submit', function(e) {
+    //         e.preventDefault();
+    //         let data = {
+    //         name: e.target.name.value,
+    //         email: e.target.email.value,
+    //         username: e.target.username.value
+    //         };
+    //         ctx.newuser = data;
+    //         console.log('data from form', ctx.newuser);
+    //         next();
+    //     });
+    // }
 
     //login to the acount
-    view.login = function(ctx, next) {
-        $('#create-user').css('display', 'none');
-        $('#upload').css('display', 'none');
-        $('#graph').css('display', 'none');
-        $('#about-us').css('display', 'none');
+    // view.login = function(ctx, next) {
+    //     $('#create-user').css('display', 'none');
+    //     $('#upload').css('display', 'none');
+    //     $('#graph').css('display', 'none');
+    //     $('#about-us').css('display', 'none');
 
 
-        $('#login').on('submit', function(e) {
-            e.preventDefault();
-            let data = e.target.username.value;
-            console.log(e.target.username.value);
-            // next();
-        });
-        console.log('login');
+    //     $('#login').on('submit', function(e) {
+    //         e.preventDefault();
+    //         let data = e.target.username.value;
+    //         console.log(e.target.username.value);
+    //         // next();
+    //     });
+    //     console.log('login');
 
-    }
+    // }
 
     // if no username
     view.noUserName = function() {
