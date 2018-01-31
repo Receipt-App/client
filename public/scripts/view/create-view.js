@@ -21,7 +21,5 @@
             next();
         });
     }
-
-
     module.createView = createView;
 })(window);
