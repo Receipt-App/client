@@ -45,23 +45,23 @@
     // }
 
     // if no username
-    view.noUserName = function() {
-        console.log('no username') 
-        /// same as login but red user name don't exist
-        console.log('login');
-        view.login();
-    }
+    // view.noUserName = function() {
+    //     console.log('no username') 
+    //     /// same as login but red user name don't exist
+    //     console.log('login');
+    //     view.login();
+    // }
 
 
-    // render information about user
-    view.profUser = function(ctx,next) {
-        $('#create-user').css('display', 'none');
-        $('#upload').css('display', 'none');
-        $('#graph').css('display', 'none');
-        $('#about-us').css('display', 'none');
-        console.log('userpage');
+    // // render information about user
+    // view.profUser = function(ctx,next) {
+    //     $('#create-user').css('display', 'none');
+    //     $('#upload').css('display', 'none');
+    //     $('#graph').css('display', 'none');
+    //     $('#about-us').css('display', 'none');
+    //     console.log('userpage');
         
-    }
+    // }
 
 
     

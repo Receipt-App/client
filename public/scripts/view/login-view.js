@@ -18,7 +18,8 @@
       console.log(e.target.username.value);
       next();
     });
-  }
+  };
+
   module.loginView = loginView;
 })(window);
 
