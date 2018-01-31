@@ -10,28 +10,59 @@ header {
   padding-left: 120px;
   text-align: left;
 }
+
+#aboutUs {
+  text-align: center;
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 28px;
+}
+
+.circle {
+  height: 90px;
+  width: 90px;
+  border-radius: 100%;
+  border-style: solid;
+  border-color: darkgrey;
+  border-width: 5px;
+}
+
 #logo {
   float: left;
+  
 }
+
 .title {
   padding: 30px;
   /* float: left; */
 }
+
 h1 {
   font-size: 30px;
 }
+
 h2 {
   font-size: 20px;
   border: 1px black solid;
   padding: 10px;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.899);
-
 }
+
+h3 {
+  font-family: 'Patrick Hand SC', cursive;
+  /* float: right; */
+  font-size: 30px
+}
+
 
 p {
   padding: 5px;
   font-size: 10px;
+}
+
+h4 {
+  font-size: 14px;
+  font-family: 'PT Serif', serif;
 }
 
 main {
@@ -40,6 +71,7 @@ main {
   width: 95%;
   margin: 0 auto;
 }
+
 /* section {
   text-align: center;
 } */
@@ -59,6 +91,11 @@ main {
 
 #about-us p {
   font-size: 12px;
+}
+
+#about-us div {
+  font-size: 20px;
+  font-family: 'Patrick Hand SC', cursive;
 }
 .input-field {
   display: block;
