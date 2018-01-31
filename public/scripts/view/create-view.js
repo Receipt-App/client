@@ -8,7 +8,7 @@
         $('#profile').hide();
         $('#login').hide();
         $('#about-us').hide();
-        next();
+        // next();
     }
 
     createView.new = (ctx, next) => {

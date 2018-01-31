@@ -11,7 +11,7 @@
         let data = ctx.newuser;
         console.log('data for the post ', data);
         $.post(`${__API_URL__}/users/allusers`, data)
-            .then(page('/login'));
+            .then(page('/profile'));
         }
 
 
@@ -28,14 +28,15 @@
     //// ask about 
     user.checkUser = function(ctx, next) {
         var username = ctx.curentUser;
-        if (ctx.users.toUperCase().includes(username.toUperCase()) === true){
+        if (ctx.users.toUpperCase().includes(username.toUperCase()) === true){
             cts.curentUser  = username;
             console.log(ctx.curentUser);
-            next();           
+            next();
+            page.redirect('/profile')           
 
         } else {
             console.log('NO USERNAME');
-            page('/login');
+            page('/');
 
         }
     }
