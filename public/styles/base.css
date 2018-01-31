@@ -95,6 +95,16 @@ button {
   color: #fff;
 }
 
+
+.preview img {
+  width: 100px;
+}
+
+div label {
+  display: block;
+  font-size: 20px;
+
 .about-color a {
   color: rgb(61, 197, 140)
+
 }

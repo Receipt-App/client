@@ -53,12 +53,30 @@
       <section id="profile">
         <h2>Your Profile</h2>
         <p>*** EMPTY PROFILE ***</p>
+        
+        <H2 >ADD A CARD</H2>
+        <!-- <input id="upload" type="file" accept="image/*"> -->
 
-        <input type="file" onchange="Tesseract.recognize(this.files[0]).progress(function(data){console.log(data)}).then(function(data){console.log(data)})">
+        <!-- <button type="submit">add card</button> -->
+
+        <form method="post" enctype="multipart/form-data">
+          <div>
+            <label for="image_uploads">Choose images to upload (PNG, JPG)</label>
+            <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" onchange="Tesseract.recognize(this.files[0]).then(function(data){ console.log(data)
+              
+            })">
+          </div>
+          <div class="preview">
+            <p>No files currently selected for upload</p>
+          </div>
+          <div>
+            <button type="button" id="add-card" onclick="card.add()">add card</button>
+          </div>
+        </form>
 
 
-        <button id="upload">ADD A CARD</button>
         <section>
+          <h2>Your Cards</h2>
           <ul id="card-list">
             <li>a </li>
             <li>b</li>
@@ -101,6 +119,7 @@
     crossorigin="anonymous"></script>
     <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+    <script src="app.js"></script>
     <script src="scripts/model/user.js"></script>
     <script src="scripts/view/login-view.js"></script>
     <script src="scripts/view/create-view.js"></script>
