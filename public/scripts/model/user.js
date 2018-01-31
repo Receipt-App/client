@@ -32,7 +32,7 @@
         if (arr.includes(ctx.curentUser.toUpperCase()) === true){
             localStorage.curentUser = ctx.curentUser;
             page('/profile');
-            console.log(ctx.curentUser);
+            console.log('checked user from login' , ctx.curentUser);
         } else {
                 alert('NO USERNAME');
                 page.redirect('/');

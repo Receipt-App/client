@@ -10,6 +10,7 @@
     $('#upload').hide();
     $('#profile').hide();
     $('#about-us').hide();
+    $('#login').show();
 
     $('#login').on('submit', function(e) {
       e.preventDefault();
