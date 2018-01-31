@@ -57,7 +57,7 @@
         <input type="file" onchange="Tesseract.recognize(this.files[0]).progress(function(data){console.log(data)}).then(function(data){console.log(data)})">
 
 
-        <button id="upload">ADD A CARD</button>
+        <button id="upload-btn">ADD A CARD</button>
         <section>
           <ul id="card-list">
             <li>a </li>
@@ -96,9 +96,7 @@
       <nav class="about-color"><a href="/aboutus">About Us</a></nav>
     </footer>
     
-    <script src="http://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
     <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="scripts/model/user.js"></script>
