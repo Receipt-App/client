@@ -32,7 +32,7 @@
         if (arr.includes(ctx.curentUser.toUpperCase()) === true){
             localStorage.curentUser = ctx.curentUser;
             page('/profile');
-            console.log(ctx.curentUser);
+            console.log('checked user from login' , ctx.curentUser);
         } else {
                 alert('NO USERNAME');
                 page.redirect('/');
@@ -42,7 +42,7 @@
         
         user.loadUserData = function(cts, next) {
             data = localStorage.curentUser;
-            console.log('final user' , data);
+            console.log('final user' ,  data);
             $.get(`${__API_URL__}/users/cards`, data)
            .then(results => {
                ctx.userData = results;

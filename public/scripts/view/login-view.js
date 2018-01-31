@@ -10,6 +10,7 @@
     $('#upload').hide();
     $('#profile').hide();
     $('#about-us').hide();
+    $('#login').show();
 
     $('#login').on('submit', function(e) {
       e.preventDefault();
@@ -17,7 +18,8 @@
       console.log(e.target.username.value);
       next();
     });
-  }
+  };
+
   module.loginView = loginView;
 })(window);
 
