@@ -45,31 +45,51 @@
         <a href="/new"> Create one!</a>
       </form>
     </section>
-
-    <form id="create-user">
-      <h2>Create User</h2>
-      <input class="input-field" type="text" id="name" placeholder="Please enter your name..." required>
-      <input class="input-field" type="text" id="email" placeholder="Please enter your email address..." required>
-      <input class="input-field" type="text" id="username" placeholder="Please create username..." required>
-      <input class="input-field" type="text" id="password" placeholder="Please create password..." required>
-      <button type="submit">Submit and return to the home page</button>
-    </form>
-    <section id="upload">
-      <h2>Upload a picture of the business card</h2>
-      <div class="canvas"></div>
-    </section>
-    <section id="profile">
-      <h2>Your Profile</h2>
-      <p>*** EMPTY PROFILE ***</p>
-      <button id="upload">ADD A CARD</button>
-      <section>
-        <ul id="card-list">
-          <li>a </li>
-          <li>b</li>
-          <li>c</li>
-        </ul>
+      <form id="create-user">
+        <h2>Create User</h2>
+        <input class="input-field" type="text" id="name" placeholder="Please enter your name..." required>
+        <input class="input-field" type="text" id="email" placeholder="Please enter your email address..." required>
+        <input class="input-field" type="text" id="username" placeholder="Please create username..." required>
+        <input class="input-field" type="text" id="password" placeholder="Please create password..." required>
+        <button type="submit">Submit and return to the home page</button>      
+      </form>
+      <section id="upload">
+        <h2>Upload a picture of the business card</h2>
+        <div class="canvas"></div>
       </section>
-    </section>
+      <section id="profile">
+        <h2>Your Profile</h2>
+        <p>*** EMPTY PROFILE ***</p>
+        
+        <H2 >ADD A CARD</H2>
+        <!-- <input id="upload" type="file" accept="image/*"> -->
+
+        <!-- <button type="submit">add card</button> -->
+
+        <form method="post" enctype="multipart/form-data">
+          <div>
+            <label for="image_uploads">Choose images to upload (PNG, JPG)</label>
+            <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" onchange="Tesseract.recognize(this.files[0]).then(function(data){ console.log(data)
+              
+            })">
+          </div>
+          <div class="preview">
+            <p>No files currently selected for upload</p>
+          </div>
+          <div>
+            <button type="button" id="add-card" onclick="card.add()">add card</button>
+          </div>
+        </form>
+        <section>
+          <h2>Your Cards</h2>
+          <ul id="card-list">
+            <li>a </li>
+            <li>b</li>
+            <li>c</li>
+          </ul>
+        </section>
+      </section>
+    
     <section id="about-us">
       <h2 id="aboutUs">About Us</h2>
       <ul>
@@ -99,27 +119,23 @@
         </li>
       </ul>
     </section>
-
-
-  </main>
-  <footer>
-    <p>Created by: Alex Bowers, Christian Miller, Tama Rushin and Andrii Glukhyi</p>
-    <nav>
-      <a href="/aboutus">About Us</a>
-    </nav>
-  </footer>
-
-  <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-  <script src="scripts/model/user.js"></script>
-  <script src="scripts/view/view.js"></script>
-  <script src="scripts/view/login-view.js"></script>
-  <script src="scripts/view/create-view.js"></script>
-  <script src="scripts/view/about-us.js"></script>
-  <script src="scripts/view/profile-view.js"></script>
-  <script src="scripts/controller/routes.js"></script>
-
-
-</body>
-
+    </main>
+    <footer>
+      <p>Created by: Alex Bowers, Christian Miller, Tama Rushin and Andrii Glukhyi</p>
+      <nav class="about-color"><a href="/aboutus">About Us</a></nav>
+    </footer>
+    
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+    <script src="app.js"></script>
+    <script src="scripts/model/user.js"></script>
+    <script src="scripts/view/login-view.js"></script>
+    <script src="scripts/view/create-view.js"></script>
+    <script src="scripts/view/about-us.js"></script>
+    <script src="scripts/view/profile-view.js"></script>
+    <script src="scripts/controller/routes.js"></script>
+    
+    
+  </body>
 </html>

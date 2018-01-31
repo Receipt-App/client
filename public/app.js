@@ -1,19 +1,15 @@
-// 'use strict';
+'use strict';
 
-// $('#create-user').on('submit', function(e) {
-//     e.preventDefault();
-  
-//     let data = {
-//       name: e.target.name.value,
-//       emil: e.target.email.value,
-//       username: e.target.username.value,
-//     }
-//     console.log(data);
+(function(module){
+  const card = {};
 
-//     $.post('/users', data)
-//     .then(function() {
-//       console.log('done');
-//     });
-// });
+  card.add = () => {
+    var cardList = $('#card-list');
+    let content = `<li>x</li>`;
+    cardList.append(content);
+    console.log('card added')
+  }
+
+  module.card = card;
+})(window)  
   
-    
