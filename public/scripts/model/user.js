@@ -25,27 +25,25 @@
            });
         console.log('load users from database');
     }
-
-    //// ask about 
+ 
     user.checkUser = function(ctx, next) {
         var arr = [];
         ctx.allusers.map(item=>arr.push (item.username.toUpperCase()));
-        console.log(arr);
-
-         if (arr.includes(ctx.curentUser.toUpperCase()) === true){
-            console.log('final user' , ctx.curentUser);
-            page('/profile');           
-
+        if (arr.includes(ctx.curentUser.toUpperCase()) === true){
+            localStorage.curentUser = ctx.curentUser;
+            page('/profile');
+            console.log(ctx.curentUser);
         } else {
-            console.log('NO USERNAME');
-            page('/');
-
+                alert('NO USERNAME');
+                page.redirect('/');
+                
+            }
         }
-    }
-
-    user.loadUserData = function(cts, next) {
-        data = ctx.curentUser;
-         $.get(`${__API_URL__}/users/cards`, data)
+        
+        user.loadUserData = function(cts, next) {
+            data = localStorage.curentUser;
+            console.log('final user' , data);
+            $.get(`${__API_URL__}/users/cards`, data)
            .then(results => {
                ctx.userData = results;
             });
