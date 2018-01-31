@@ -53,6 +53,10 @@
       <section id="profile">
         <h2>Your Profile</h2>
         <p>*** EMPTY PROFILE ***</p>
+
+        <input type="file" onchange="Tesseract.recognize(this.files[0]).progress(function(data){console.log(data)}).then(function(data){console.log(data)})">
+
+
         <button id="upload">ADD A CARD</button>
         <section>
           <ul id="card-list">
@@ -61,6 +65,7 @@
             <li>c</li>
           </ul>
         </section>
+
       </section>
       <section id="about-us">
         <h2>About Us</h2>
@@ -94,9 +99,9 @@
     <script src="http://code.jquery.com/jquery-3.3.1.js"
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
+    <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="scripts/model/user.js"></script>
-    <script src="scripts/view/view.js"></script> 
     <script src="scripts/view/login-view.js"></script>
     <script src="scripts/view/create-view.js"></script>
     <script src="scripts/view/about-us.js"></script>
