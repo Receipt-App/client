@@ -8,10 +8,6 @@
     $('#login').hide();
     $('#profile').show();
     $('#about-us').hide();
-
-
-    
   }
-
   module.profileView = profileView;
 })(window);
