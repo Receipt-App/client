@@ -42,7 +42,7 @@
         
         user.loadUserData = function(cts, next) {
             data = localStorage.curentUser;
-            console.log('final user' , data);
+            console.log('final user' ,  data);
             $.get(`${__API_URL__}/users/cards`, data)
            .then(results => {
                ctx.userData = results;
