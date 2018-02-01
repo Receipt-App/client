@@ -41,22 +41,14 @@ function nameToForm (){
 
 function emailToForm (){
   var email = forRegex.text.match(/([a-zA-Z0-9._+-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi); 
-  // var number = forRegex.text.split(/\n/).find((item)=> /[-]{0,1}[\d]*[\.]{0,1}[\d]+/g.test(item)===true);
-  // var name = forRegex.text.match(/^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/)[0];
-
-  // $('#cardPhone').val(number);
   $('#cardEmail').val(email);
-  // $('#cardName').val(name);
+ 
 }
 
-function numberToForm (){
-  // var email = forRegex.text.match(/([a-zA-Z0-9._+-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi);
+function numberToForm (){  
   var number = forRegex.text.split(/\n/).find((item)=> /[-]{0,1}[\d]*[\.]{0,1}[\d]+/g.test(item)===true);
-  // var name = forRegex.text.match(/^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/)[0];
-
   $('#cardPhone').val(number);
-  // $('#cardEmail').val(email);
-  // $('#cardName').val(name);
+  
 }
 
 
