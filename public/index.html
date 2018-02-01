@@ -79,6 +79,7 @@
       <h3 >ADD A CARD</h3>
 
       <form method="post" enctype="multipart/form-data">
+        
         <div>
           <label for="image_uploads">Choose images to upload (PNG, JPG)</label>
           <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" onchange="Tesseract.recognize(this.files[0]).then(function(data){ forRegex = data;})">
@@ -87,7 +88,7 @@
           <p>No files currently selected for upload</p>
         </div>
         <div>
-          <button type="submit" id="add-card" onclick="nameToForm(),emailToForm(), numberToForm()">Extract</button>
+          <button type="button" id="add-card" onclick="nameToForm(),emailToForm(), numberToForm()">Extract</button>
         </div>
       </form>
 
