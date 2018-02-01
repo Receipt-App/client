@@ -18,7 +18,7 @@
     $('#login').on('submit', function(e) {
       e.preventDefault();
       ctx.curentUser = e.target.username.value;
-      console.log(e.target.username.value);
+      // console.log(e.target.username.value);
       next();
     });
   };

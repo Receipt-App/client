@@ -9,7 +9,7 @@
     $('#login').hide();
     $('#profile').show();
     $('#about-us').hide();
-    console.log(ctx);
+    // console.log(ctx);
     next();
   }
   module.profileView = profileView;
@@ -18,7 +18,7 @@
 
 function nameToForm (){
    var name = forRegex.text.match(/^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/);
-   console.log(name);
+  //  console.log(name);
    if(name !== null){     
      $('#cardName').val(name[0]);
    } else{

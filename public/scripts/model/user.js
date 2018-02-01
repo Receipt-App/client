@@ -24,7 +24,6 @@
                console.log(ctx.allusers);
                next();
            });
-        console.log('load users from database');
     }
  
     user.checkUser = function(ctx, next) {
@@ -44,7 +43,7 @@
         
     user.loadUserData = function(ctx, next) {
         // var data = localStorage.curentUser;
-        console.log(ctx);
+        // console.log(ctx);
         $.get(`${__API_URL__}/users/cards`)
         .then(results => {
         // //     console.log('send request for all cards');
@@ -54,12 +53,16 @@
         // //         // $('#profile p').text(results);
         // //         // next();
                 console.log(results);
-            });              
+                console.log(localStorage);
+            });        
+            
+            var userFromLocal = localStorage.curentUser;
+            console.log(userFromLocal);
 
         $('#card-for-db').on('submit', function(e) {
             e.preventDefault();
             let cardForDb = {
-                username: localStorage.curentUser,
+                username: e.target.cardName.value,
                 name: e.target.cardName.value,
                 email: e.target.cardEmail.value,
                 phone: e.target.cardPhone.value,
@@ -70,13 +73,14 @@
                 url: `${__API_URL__}/users/cards`,
                 method: 'POST',
                 data: {
-                  username: cardForDb.username,
-                  name: cardForDb.username,
-                  email: cardForDb.email,
-                  phone: cardForDb.phone,
-                  other: cardForDb.other
+                    username: cardForDb.username,
+                    name: cardForDb.name,
+                    email: cardForDb.email,
+                    phone: cardForDb.phone,
+                    other: cardForDb.other
                 }
-              })
+            })
+                
                 .then(console.log('card sended', cardForDb.username, cardForDb.email ))
                 .then(page.redirect('/profile'))
 
