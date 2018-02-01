@@ -12,21 +12,6 @@
   module.profileView = profileView;
 })(window);
 
-// $('#add-card').on('click', ('#cardName').val(forRegex.text[10]))
-//   e.preventDefault();
-//   var phoneRegex = /\d*\.?\d*\.?\d* /;
-//   var emailRegex = /\S+@\S+\.\S+/;
-//   var hasNumber = /\d/;
-//   var nameRegex = /^[a-zA-Z ]+S/;
-
-
-//   ('#cardName').val(forRegex.text[10]);
-
-//   // for( var i = 0; i<forRegex.text.length; i++){
-//   //   if ($('#cardName').val() === "" && forRegex.text[i].length>1 && nameRegex.test(forRegex.text[i] + ' ' + forRegex.test[i+1])){
-       
-//   //   }
-//   // }
 
 function nameToForm (){
    var name = forRegex.text.match(/^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/);
@@ -35,6 +20,7 @@ function nameToForm (){
      $('#cardName').val(name[0]);
    } else{
     $('#cardName').val("");
+    
    }
   
 }

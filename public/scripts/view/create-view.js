@@ -3,6 +3,7 @@
 (function (module) {
     var createView = {};
     createView.init = function(ctx, next) {
+        $("form").trigger("reset"); 
         $('#create-user').show();
         $('#upload').hide();
         $('#profile').hide();

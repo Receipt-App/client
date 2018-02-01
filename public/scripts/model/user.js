@@ -37,7 +37,7 @@
             // console.log('checked user from login' , ctx.curentUser);
         } else {
                 alert('NO USERNAME');
-                redirect('https://pop-client-staging.herokuapp.com/');
+                // redirect('https://pop-client-staging.herokuapp.com/');
                 
             }
         }
