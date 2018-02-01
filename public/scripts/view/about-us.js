@@ -9,6 +9,10 @@
     $('#profile').hide();
     $('#login').hide();
     $('#about-us').show();
+    $('#delete-user').hide();
+    $('#update-user-form').hide();
+
+
   }
   module.aboutView = aboutView;
 })(window);

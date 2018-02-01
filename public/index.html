@@ -60,16 +60,18 @@
         <input class="input-field" type="text" name="username" value="username" required>
         <button id="update-user" type="button">Update</button>
       </form>
-      <section id="upload">
-        <h2>Upload a picture of the business card</h2>
-        <div class="canvas"></div>
+      <section id="delete-user">
+        <h2>Delete User</h2>
+        <p>Are you sure you wish to delete your profile?  All your cards will be lost.</p>
+        <button type="button" id="delete-user-button">Delete User</button>
       </section>
+
       <section id="profile">
         <h2>Your Profile</h2>
         <p>*** EMPTY PROFILE ***</p>
 
         <a href="/update">update</a>
-        
+        <a href="/delete">delete</a>
         <H2 >ADD A CARD</H2>
 
         <form method="post" enctype="multipart/form-data">
@@ -155,6 +157,7 @@
     <script src="scripts/view/about-us.js"></script>
     <script src="scripts/view/profile-view.js"></script>
     <script src="scripts/view/update-user-view.js"></script>
+    <script src="scripts/view/delete-user-view.js"></script>    
     <script src="scripts/controller/routes.js"></script>
     
     

@@ -7,6 +7,8 @@
     $('#login').hide();
     $('#about-us').hide();
     $('#update-user-form').show();
+    $('#delete-user').hide();
+
 
     $('#update-user').on('submit', function (e) {
       e.preventDefault();

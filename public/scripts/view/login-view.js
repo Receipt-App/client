@@ -13,6 +13,8 @@
     $('#about-us').hide();
     $('#update-user-form').hide();
     $('#login').show();
+    $('#delete-user').hide();
+
     
 
     $('#login').on('submit', function(e) {
