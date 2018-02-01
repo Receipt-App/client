@@ -57,4 +57,13 @@ label {
   #toggle:checked + .menu {
     display: block;
   }
+
+  #logo {
+    display: none;
+  }
+
+  .heading {
+    font-size: 6vw;
+    text-align: center;
+  }
 }
