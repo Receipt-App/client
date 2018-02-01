@@ -9,7 +9,15 @@
     $('#login').hide();
     $('#profile').show();
     $('#about-us').hide();
+<<<<<<< HEAD
     // console.log(ctx);
+=======
+    $('#delete-user').hide();
+    $('#update-user-form').hide();
+
+
+    console.log(ctx);
+>>>>>>> 9ca2bbda4dba7841a8fc37980a3c3a1ff9fad30b
     next();
   }
   module.profileView = profileView;

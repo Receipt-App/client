@@ -9,6 +9,10 @@
         $('#profile').hide();
         $('#login').hide();
         $('#about-us').hide();
+        $('#delete-user').hide();
+        $('#update-user-form').hide();
+
+
 
         $('#create-user').on('submit', function(e) {
             e.preventDefault();

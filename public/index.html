@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/module.css">
-  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 
   <title>KartaDex</title>
 </head>
@@ -19,13 +18,18 @@
   <header>
     <img id="logo" src="assets/Logo.png" alt="Logo">
     <h1 class="heading">KartaDex</h1>
-    <h3 class="heading">Your business card collector</h3>
+    <h2 >Your business card collector</h2>
     <section class="main-nav">
       <label for="toggle">&#9776;</label>
       <input type="checkbox" id="toggle">
       <section class="menu">
+<<<<<<< HEAD
         <a href="https://pop-client-staging.herokuapp.com/">Home</a>
         <a href="/upload">Upload a Business Card</a>
+=======
+        <a href="/"><span>Home</span></a>
+        <!-- <a href="/upload"><span> Upload a Business Card</span></a> -->
+>>>>>>> 9ca2bbda4dba7841a8fc37980a3c3a1ff9fad30b
         <a href="/profile">
           <span>Profile</span>
         </a>
@@ -37,7 +41,7 @@
 
     <section id="login">
       <form>
-        <h2>Login</h2>
+        <h3>Login</h3>
         <input class="input-field" type="text" name="username" placeholder="Please enter your username" required>
         <input class="input-field" type="password" name="psw" placeholder="Please enter your password" required>
         <button type="submit">Login</button>
@@ -46,22 +50,33 @@
       </form>
     </section>
       <form id="create-user">
-        <h2>Create User</h2>
+        <h3>Create User</h3>
         <input class="input-field" type="text" id="name" placeholder="Please enter your name..." required>
         <input class="input-field" type="text" id="email" placeholder="Please enter your email address..." required>
         <input class="input-field" type="text" id="username" placeholder="Please create username..." required>
         <input class="input-field" type="text" id="password" placeholder="Please create password..." required>
-        <button type="submit">Submit and return to the home page</button>      
+        <button type="submit">Create</button>      
       </form>
-      <section id="upload">
-        <h2>Upload a picture of the business card</h2>
-        <div class="canvas"></div>
+      <form id="update-user-form">
+        <h3>Update User</h3>
+        <input class="input-field" type="text" name="name" value="ctx.name" required>
+        <input class="input-field" type="text" name="email" value="ctx.email" required>
+        <input class="input-field" type="text" name="username" value="username" required>
+        <button id="update-user" type="button">Update</button>
+      </form>
+      <section id="delete-user">
+        <h3>Delete User</h3>
+        <h4>Are you sure you wish to delete your profile?  All your cards will be lost.</h4>
+        <button type="button" id="delete-user-button">Delete User</button>
       </section>
+
       <section id="profile">
-        <h2>Your Profile</h2>
+        <h3>Your Profile</h3>
         <p>*** EMPTY PROFILE ***</p>
-        
-        <H2 >ADD A CARD</H2>
+
+        <a href="/update">Update</a>
+        <a href="/delete">Delete</a>
+        <h3 >ADD A CARD</h3>
 
         <form method="post" enctype="multipart/form-data">
           <div>
@@ -81,12 +96,12 @@
             <input class="input-field" type="text" id="cardEmail" placeholder="Card email " required>
             <input class="input-field" type="text" id="cardPhone" placeholder="Card phone " required>
             <input class="input-field" type="text" id="cardAddress" placeholder="Card adress" required>
-            <button type="submit">add card</button>      
+            <button type="submit">Add card</button>      
             </form>
 
 
         <section>
-          <h2>Your Cards</h2>
+          <h3>Your Cards</h3>
           <ul id="card-list">
             <li>a </li>
             <li>b</li>
@@ -96,12 +111,12 @@
       </section>
     
     <section id="about-us">
-      <h2 id="aboutUs">About Us</h2>
+      <h3 id="aboutUs">About Us</h3>
       <ul>
         <li>
           <img src="./assets/Alex.png" class="circle" alt="Alex">
           <div class="bio">
-           <h3>Alex Bowers</h3>
+           <h2>Alex Bowers</h2>
             <p>I am interested in becoming a full stack javascript developer. A long term goal is moving into the game development
             sphere.</p>
           </div>
@@ -109,21 +124,21 @@
           <li>
             <img src="./assets/Christian.png" class="circle" alt="Christian">
             <div class="bio">            
-              <h3>Christian Miller</h3>
+              <h2>Christian Miller</h2>
               <p>I am interested in becoming a full stack/backend Javascript developer. I would love to work at Twitch eventually.</p>
             </div>
           </li>
           <li>
             <img src="./assets/Andrii.png" class="circle" alt="Andrii">
             <div class="bio">            
-              <h3>Andrii Glukhyi</h3>
+              <h2>Andrii Glukhyi</h2>
               <p>I am interested in becoming a full stack PYTHON developer. Very interested in machine learning sphere.</p>
             </div>
           </li>
           <li>
             <img src="./assets/Tama.jpg" class="circle" alt="tama">
             <div class="bio">            
-              <h3>Tama Rushin</h3>
+              <h2>Tama Rushin</h2>
               <p>I am interested in becoming a front end javascript developer. I would also love to be technical recruiter for a large company.</p>
             </div>
         </li>
@@ -145,6 +160,8 @@
     <script src="scripts/view/create-view.js"></script>
     <script src="scripts/view/about-us.js"></script>
     <script src="scripts/view/profile-view.js"></script>
+    <script src="scripts/view/update-user-view.js"></script>
+    <script src="scripts/view/delete-user-view.js"></script>    
     <script src="scripts/controller/routes.js"></script>
     
     
