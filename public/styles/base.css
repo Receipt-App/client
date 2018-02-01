@@ -156,6 +156,7 @@ footer {
 
 button {
   width: 25%;
+  min-width: 90px;
   margin: 0 auto;
   border-radius: 5px;
   background-color: black;
