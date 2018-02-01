@@ -13,7 +13,7 @@
         console.log('data for the post ', data);
         $.post(`${__API_URL__}/users/allusers`, data)
         .then(console.log('data send to the server '));
-        page.redirect('/');
+        window.location.href = 'https://pop-client-staging.herokuapp.com/';
         }
 
 
@@ -59,11 +59,11 @@
         $('#card-for-db').on('submit', function(e) {
             e.preventDefault();
             let cardForDb = {
-                username:ctx.userNow,
+                username: localStorage.curentUser,
                 name: e.target.cardName.value,
                 email: e.target.cardEmail.value,
                 phone: e.target.cardPhone.value,
-                address: e.target.cardAddress.value,
+                other: e.target.cardAddress.value
             }
             console.log(cardForDb);
             $.ajax({
@@ -71,7 +71,10 @@
                 method: 'POST',
                 data: {
                   username: cardForDb.username,
-                  card: cardForDb.email
+                  name: cardForDb.username,
+                  email: cardForDb.email,
+                  phone: cardForDb.phone,
+                  other: cardForDb.other
                 }
               })
                 .then(console.log('card sended', cardForDb.username, cardForDb.email ))
