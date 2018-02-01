@@ -18,8 +18,8 @@
 <body>
   <header>
     <img id="logo" src="assets/Logo.png" alt="Logo">
-    <h1>KartaDex</h1>
-    <h3>Your business card collector</h3>
+    <h1 class="heading">KartaDex</h1>
+    <h3 class="heading">Your business card collector</h3>
     <section class="main-nav">
       <label for="toggle">&#9776;</label>
       <input type="checkbox" id="toggle">
@@ -71,24 +71,29 @@
         <a href="/update">update</a>
         
         <H2 >ADD A CARD</H2>
-        <!-- <input id="upload" type="file" accept="image/*"> -->
-
-        <!-- <button type="submit">add card</button> -->
 
         <form method="post" enctype="multipart/form-data">
           <div>
             <label for="image_uploads">Choose images to upload (PNG, JPG)</label>
-            <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" onchange="Tesseract.recognize(this.files[0]).then(function(data){ console.log(data)
-              
-            })">
+            <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" onchange="Tesseract.recognize(this.files[0]).then(function(data){ forRegex = data;})">
           </div>
           <div class="preview">
             <p>No files currently selected for upload</p>
           </div>
           <div>
-            <button type="button" id="add-card" onclick="card.add()">add card</button>
+            <button type="button" id="add-card" onclick="nameToForm(),emailToForm(), numberToForm()">Extract</button>
           </div>
         </form>
+
+        <form id="card-for-db">
+            <input class="input-field" type="text" id="cardName" placeholder="Card name " required>
+            <input class="input-field" type="text" id="cardEmail" placeholder="Card email " required>
+            <input class="input-field" type="text" id="cardPhone" placeholder="Card phone " required>
+            <input class="input-field" type="text" id="cardAddress" placeholder="Card adress" required>
+            <button type="submit">add card</button>      
+            </form>
+
+
         <section>
           <h2>Your Cards</h2>
           <ul id="card-list">
@@ -106,25 +111,30 @@
           <img src="./assets/Alex.png" class="circle" alt="Alex">
           <div class="bio">
            <h3>Alex Bowers</h3>
-            <div>I am interested in becoming a full stack javascript developer. A long term goal is moving into the game development
-            sphere.</div>
+            <p>I am interested in becoming a full stack javascript developer. A long term goal is moving into the game development
+            sphere.</p>
           </div>
           </li>
           <li>
             <img src="./assets/Christian.png" class="circle" alt="Christian">
-            <h3>Christian Miller</h3>
-            <div>I am interested in becoming a full stack/backend Javascript developer. I would love to work at Twitch eventually.</div>
+            <div class="bio">            
+              <h3>Christian Miller</h3>
+              <p>I am interested in becoming a full stack/backend Javascript developer. I would love to work at Twitch eventually.</p>
+            </div>
           </li>
           <li>
             <img src="./assets/Andrii.png" class="circle" alt="Andrii">
-            <h3>Andrii Glukhyi</h3>
-            <div>I am interested in becoming a full stack PYTHON developer. Very interested in machine learning sphere.</div>
+            <div class="bio">            
+              <h3>Andrii Glukhyi</h3>
+              <p>I am interested in becoming a full stack PYTHON developer. Very interested in machine learning sphere.</p>
+            </div>
           </li>
           <li>
             <img src="./assets/Tama.jpg" class="circle" alt="tama">
-            <h3>Tama Rushin</h3>
-            <div>I am interested in becoming a front end javascript developer. I would also love to be technical recruiter for a
-              large company.</div>
+            <div class="bio">            
+              <h3>Tama Rushin</h3>
+              <p>I am interested in becoming a front end javascript developer. I would also love to be technical recruiter for a large company.</p>
+            </div>
         </li>
       </ul>
     </section>
@@ -134,7 +144,8 @@
       <nav class="about-color"><a href="/aboutus">About Us</a></nav>
     </footer>
     
-    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.3.1.js"></script> -->
+    <script src="scripts/vendor/jquery.js"></script>
     <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="app.js"></script>

@@ -1,6 +1,7 @@
 'use strict';
 
 (function(module) {
+    var forRegex;
 
     var __API_URL__ = "https://pop-server-staging.herokuapp.com"
 
@@ -32,23 +33,71 @@
         if (arr.includes(ctx.curentUser.toUpperCase()) === true){
             localStorage.curentUser = ctx.curentUser;
             page('/profile');
-            console.log('checked user from login' , ctx.curentUser);
+            next();
+            // console.log('checked user from login' , ctx.curentUser);
         } else {
                 alert('NO USERNAME');
-                page.redirect('/');
+                window.location.href = 'https://pop-client-staging.herokuapp.com/';
                 
             }
         }
         
-        user.loadUserData = function(cts, next) {
-            data = localStorage.curentUser;
-            console.log('final user' ,  data);
-            $.get(`${__API_URL__}/users/cards`, data)
-           .then(results => {
-               ctx.userData = results;
-            });
-            next();    
+    user.loadUserData = function(ctx, next) {
+        // var data = localStorage.curentUser;
+        console.log(ctx);
+        $.get(`${__API_URL__}/users/cards`)
+        .then(results => {
+        // //     console.log('send request for all cards');
+        // //     // if (err){
+        // //         // $('#profile p').text('You have no card');
+        // //     // } else{
+        // //         // $('#profile p').text(results);
+        // //         // next();
+                console.log(results);
+            });              
+
+        $('#card-for-db').on('submit', function(e) {
+            e.preventDefault();
+            let cardForDb = {
+                username:ctx.userNow,
+                name: e.target.cardName.value,
+                email: e.target.cardEmail.value,
+                phone: e.target.cardPhone.value,
+                address: e.target.cardAddress.value,
+            }
+            console.log(cardForDb);
+            $.ajax({
+                url: `${__API_URL__}/users/cards`,
+                method: 'POST',
+                data: {
+                  username: cardForDb.username,
+                  card: cardForDb.email
+                }
+              })
+                .then(console.log('card sended', cardForDb.username, cardForDb.email ))
+                .then(page.redirect('/profile'))
+
+        });
+
+        var forRegex;
+
+
+
+
+    // user.addnewcard = function(ctx,next) {
+    //     console.log(ctx.newcard);
+    //     let data =  {
+    //         username:ctx.userNow,
+    //         card:ctx.params.newcard,
+    //     };
+    //     console.log('new card for server' , data);
+    //     $.post(`${__API_URL__}/users/cards`, data)
+    //     .then(console.log('new card aded'));
+    //     page.redirect('/profile');
+
+
     }
+
         
     module.user = user;
 

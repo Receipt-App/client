@@ -7,34 +7,23 @@ body {
 header {
   background-color: #444;
   color: #fff;
-  padding-left: 120px;
+  /* padding-left: 120px; */
   text-align: left;
+  /* height: 150px; */
 }
 
-#aboutUs {
-  text-align: center;
-  font-family: 'Patrick Hand SC', cursive;
-  font-size: 28px;
-}
-
-.circle {
-  height: 90px;
-  width: 90px;
-  border-radius: 100%;
-  border-style: solid;
-  border-color: darkgrey;
-  border-width: 5px;
-}
 
 #logo {
   float: left;
-  
+  padding-right: 80px;
+  padding-top: 10px;
 }
 
-.title {
-  padding: 30px;
-  /* float: left; */
+.heading {
+  padding-top: 20px;
 }
+
+
 
 h1 {
   font-size: 30px;
@@ -49,8 +38,6 @@ h2 {
 }
 
 h3 {
-  font-family: 'Patrick Hand SC', cursive;
-  /* float: right; */
   font-size: 30px
 }
 
@@ -76,12 +63,29 @@ main {
   text-align: center;
 } */
 
+#aboutUs {
+  text-align: center;
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 28px;
+}
+
+.circle {
+  height: 90px;
+  width: 90px;
+  border-radius: 100%;
+  border-style: solid;
+  border-color: darkgrey;
+  border-width: 5px;
+  float: left;
+}
 #about-us li {
   text-align: left;
   margin: 10px;
   background-color: rgba(255, 255, 255, 0.637);
-  padding: 5px;
+  padding: 15px;
   border-radius: 5px;
+  height: 150px;
+  box-sizing: border-box;
 }
 
 #about-us li:last-child {
@@ -90,13 +94,11 @@ main {
 }
 
 #about-us p {
-  font-size: 12px;
-}
-
-#about-us div {
-  font-size: 20px;
+  padding-left: 120px;
+  font-size: 26px;
   font-family: 'Patrick Hand SC', cursive;
 }
+
 .input-field {
   display: block;
   width: 80%;
@@ -134,14 +136,20 @@ button {
 
 
 .preview img {
-  width: 100px;
+  width: 400px;
 }
 
 div label {
   display: block;
   font-size: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: black;
+  color: #fff;
+  margin: 0 auto;
+}
 
 .about-color a {
-  color: rgb(61, 197, 140)
-
+  color: rgb(61, 197, 140);
+  text-decoration: none;
 }
