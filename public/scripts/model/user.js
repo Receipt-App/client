@@ -65,8 +65,9 @@
 
         $('#card-for-db').on('submit', function(e) {
             e.preventDefault();
+
             let cardForDb = {
-                username: e.target.cardName.value,
+                username: userFromLocal,
                 name: e.target.cardName.value,
                 email: e.target.cardEmail.value,
                 phone: e.target.cardPhone.value,
