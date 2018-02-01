@@ -53,8 +53,8 @@
       </section>
       <section id="profile">
         <h2>Your Profile</h2>
-        <p>*** EMPTY PROFILE ***</p> 
-        <input type="file" onchange="Tesseract.recognize(this.files[0]).progress(function(data){console.log(data)}).then(function(data){console.log(data)})">
+        <p id = "textforprofile">*** EMPTY PROFILE ***</p> 
+        <input type="file" onchange="Tesseract.recognize(this.files[0]).progress(function(data){console.log(data)}).then(function(data){ forRegex = data})">
 
         <form id="card-for-db">
             <input class="input-field" type="text" id="cardName" placeholder="Card name " required>
@@ -86,7 +86,7 @@
           </li>
         </ul>
       </section>
-      
+
 
 
     </main>
