@@ -46,31 +46,24 @@
         }
         
     user.loadUserData = function(ctx, next) {
-        // var data = localStorage.curentUser;
-        // console.log(ctx);
         $.get(`${__API_URL__}/users/cards`)
         .then(results => {
-            $('#card-list').empty();
-            results.rows.forEach(function(item) {
-                // if (item.username === userFromLocal){
-                    let card = `
-                    <li id='card'>
-                    <p>Name: ${item.name}</p>
-                    <p>Email: ${item.email}</p>
-                    <p>Phone: ${item.email}</p>
-                    <p>Additional comment: ${item.other}</p>
-                    </li>
-                    `;
-                    $('#card-list').append(card);
-                // } else {
-                //     $('#card-list').append('No cards found');
-                // }
-                
-            });
-        });        
+            console.log(userFromLocal, results);
+            $('#card-list').empty();           
+            results.rows.filter(item => item.username === userFromLocal ).forEach(function(item){
+                let card = `
+                <li class ="card">
+                <p>Name: ${item.name}</p>
+                <p>Email: ${item.email}</p>
+                <p>Phone: ${item.email}</p>
+                <p>Additional comment: ${item.other}</p>
+                </li>
+                `;
+                $('#card-list').append(card);
+                });
+            })
             
             var userFromLocal = localStorage.curentUser;
-            console.log(userFromLocal);
 
         $('#card-for-db').on('submit', function(e) {
             e.preventDefault();
