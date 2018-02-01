@@ -66,6 +66,7 @@ label {
   #logo {
     width: 100px;
     padding: 0;
+    margin: 0;
   }
   
   .heading, header h2 {
