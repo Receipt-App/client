@@ -35,6 +35,7 @@
           <input class="input-field" type="password" name="psw" placeholder="Please enter your password" required>
           <button type="submit">Login</button>
           <p>Don't have an accout?</p><a href="/new"> Create one!</a>
+          
         </form>
       </section>
 
@@ -52,19 +53,16 @@
       </section>
       <section id="profile">
         <h2>Your Profile</h2>
-        <p>*** EMPTY PROFILE ***</p>
-
+        <p>*** EMPTY PROFILE ***</p> 
         <input type="file" onchange="Tesseract.recognize(this.files[0]).progress(function(data){console.log(data)}).then(function(data){console.log(data)})">
 
-
-        <button id="upload">ADD A CARD</button>
-        <section>
-          <ul id="card-list">
-            <li>a </li>
-            <li>b</li>
-            <li>c</li>
-          </ul>
-        </section>
+        <form id="card-for-db">
+            <input class="input-field" type="text" id="cardName" placeholder="Card name " required>
+            <input class="input-field" type="text" id="cardEmail" placeholder="Card email " required>
+            <input class="input-field" type="text" id="cardPhone" placeholder="Card phone " required>
+            <input class="input-field" type="text" id="cardAddress" placeholder="Card adress" required>
+            <button type="submit">add card</button>      
+          </form>
 
       </section>
       <section id="about-us">
