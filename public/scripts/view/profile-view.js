@@ -8,7 +8,7 @@
     $('#create-user').hide();
     $('#login').hide();
     $('#profile').show();
-    $('#about-us').hide();
+    $('#us-view').hide();
     $('#delete-user').hide();
     $('#update-user-form').hide();
 

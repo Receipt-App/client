@@ -11,7 +11,7 @@
     $('#create-user').hide();
     $('#upload').hide();
     $('#profile').hide();
-    $('#about-us').hide();
+    $('#us-view').hide();
     $('#update-user-form').hide();
     $('#login').show();
     $('#delete-user').hide();
