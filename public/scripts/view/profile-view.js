@@ -4,10 +4,13 @@
   const profileView = {};
 
   profileView.init = (ctx, next) => {
+    $('input').trigger('reset'); 
     $('#create-user').hide();
     $('#login').hide();
     $('#profile').show();
     $('#about-us').hide();
+    console.log(ctx);
+    next();
   }
   module.profileView = profileView;
 })(window);

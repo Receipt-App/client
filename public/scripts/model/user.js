@@ -36,7 +36,7 @@
             next();
             // console.log('checked user from login' , ctx.curentUser);
         } else {
-                alert('NO USERNAME');
+                alert('NO USERNAME').then(location.href = '/')
                 // redirect('https://pop-client-staging.herokuapp.com/');
                 
             }
