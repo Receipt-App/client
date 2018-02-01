@@ -5,7 +5,7 @@
     $('#upload').hide();
     $('#profile').hide();
     $('#login').hide();
-    $('#about-us').hide();
+    $('#us-view').hide();
     $('#update-user-form').show();
     $('#delete-user').hide();
 
