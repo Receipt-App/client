@@ -13,7 +13,7 @@
         console.log('data for the post ', data);
         $.post(`${__API_URL__}/users/allusers`, data)
         .then(console.log('data send to the server '));
-        page.redirect('/');
+        window.location.href = 'https://pop-client-staging.herokuapp.com/';
         }
 
 
@@ -24,7 +24,6 @@
                console.log(ctx.allusers);
                next();
            });
-        console.log('load users from database');
     }
  
     user.checkUser = function(ctx, next) {
@@ -44,36 +43,49 @@
         
     user.loadUserData = function(ctx, next) {
         // var data = localStorage.curentUser;
-        console.log(ctx);
+        // console.log(ctx);
         $.get(`${__API_URL__}/users/cards`)
         .then(results => {
-        // //     console.log('send request for all cards');
-        // //     // if (err){
-        // //         // $('#profile p').text('You have no card');
-        // //     // } else{
-        // //         // $('#profile p').text(results);
-        // //         // next();
-                console.log(results);
-            });              
+            $('#card-list').empty();
+            results.rows.forEach(function(item) {
+                let card = `
+                <li id='card'>
+                <p>Name: ${item.name}</p>
+                <p>Email: ${item.email}</p>
+                <p>Phone: ${item.email}</p>
+                <p>Additional comment: ${item.other}</p>
+                </li>
+                `;
+                $('#card-list').append(card);
+            });
+        });        
+            
+            var userFromLocal = localStorage.curentUser;
+            console.log(userFromLocal);
 
         $('#card-for-db').on('submit', function(e) {
             e.preventDefault();
+
             let cardForDb = {
-                username:ctx.userNow,
+                username: userFromLocal,
                 name: e.target.cardName.value,
                 email: e.target.cardEmail.value,
                 phone: e.target.cardPhone.value,
-                address: e.target.cardAddress.value,
+                other: e.target.cardAddress.value
             }
             console.log(cardForDb);
             $.ajax({
                 url: `${__API_URL__}/users/cards`,
                 method: 'POST',
                 data: {
-                  username: cardForDb.username,
-                  card: cardForDb.email
+                    username: cardForDb.username,
+                    name: cardForDb.name,
+                    email: cardForDb.email,
+                    phone: cardForDb.phone,
+                    other: cardForDb.other
                 }
-              })
+            })
+                
                 .then(console.log('card sended', cardForDb.username, cardForDb.email ))
                 .then(page.redirect('/profile'))
 

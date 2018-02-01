@@ -22,7 +22,7 @@
 
 function nameToForm (){
    var name = forRegex.text.match(/^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/);
-   console.log(name);
+  //  console.log(name);
    if(name !== null){     
      $('#cardName').val(name[0]);
    } else{
