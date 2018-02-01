@@ -9,6 +9,10 @@
     $('#login').hide();
     $('#profile').show();
     $('#about-us').hide();
+    $('#delete-user').hide();
+    $('#update-user-form').hide();
+
+
     console.log(ctx);
     next();
   }
