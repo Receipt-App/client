@@ -48,15 +48,19 @@
         .then(results => {
             $('#card-list').empty();
             results.rows.forEach(function(item) {
-                let card = `
-                <li id='card'>
-                <p>Name: ${item.name}</p>
-                <p>Email: ${item.email}</p>
-                <p>Phone: ${item.email}</p>
-                <p>Additional comment: ${item.other}</p>
-                </li>
-                `;
-                $('#card-list').append(card);
+                if (item.name === userFromLocal){
+                    let card = `
+                    <li id='card'>
+                    <p>Name: ${item.name}</p>
+                    <p>Email: ${item.email}</p>
+                    <p>Phone: ${item.email}</p>
+                    <p>Additional comment: ${item.other}</p>
+                    </li>
+                    `;
+                    $('#card-list').append(card);
+                } else {
+                    $('#card-list').append('No cards found');
+                }
             });
         });        
             
