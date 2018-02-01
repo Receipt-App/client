@@ -1,6 +1,7 @@
 'use strict';
 
 (function(module) {
+    var forRegex;
 
     var __API_URL__ = "https://pop-server-staging.herokuapp.com"
 
@@ -80,7 +81,7 @@
 
         var forRegex;
 
-        
+
 
 
     // user.addnewcard = function(ctx,next) {

@@ -12,19 +12,54 @@
   module.profileView = profileView;
 })(window);
 
-$('#add-card').on('submit', function (e) {
-  e.preventDefault();
-  console.log('add card');
-  // Tesseract.recognize(this.files[0]).progress(function (data) {
+// $('#add-card').on('click', ('#cardName').val(forRegex.text[10]))
+//   e.preventDefault();
+//   var phoneRegex = /\d*\.?\d*\.?\d* /;
+//   var emailRegex = /\S+@\S+\.\S+/;
+//   var hasNumber = /\d/;
+//   var nameRegex = /^[a-zA-Z ]+S/;
 
-  // }
-      // var card = e.target.result;
-      // console.log ('what i want in li',e.target.data);
 
-      // var li = document.createElement(li);
-  // li.text = card;
-  // $('#card-list').append(li);
-})
+//   ('#cardName').val(forRegex.text[10]);
+
+//   // for( var i = 0; i<forRegex.text.length; i++){
+//   //   if ($('#cardName').val() === "" && forRegex.text[i].length>1 && nameRegex.test(forRegex.text[i] + ' ' + forRegex.test[i+1])){
+       
+//   //   }
+//   // }
+
+function nameToForm (){
+   var name = forRegex.text.match(/^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/);
+   console.log(name);
+   if(name !== null){     
+     $('#cardName').val(name[0]);
+   } else{
+    $('#cardName').val("");
+   }
+  
+}
+
+function emailToForm (){
+  var email = forRegex.text.match(/([a-zA-Z0-9._+-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi); 
+  // var number = forRegex.text.split(/\n/).find((item)=> /[-]{0,1}[\d]*[\.]{0,1}[\d]+/g.test(item)===true);
+  // var name = forRegex.text.match(/^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/)[0];
+
+  // $('#cardPhone').val(number);
+  $('#cardEmail').val(email);
+  // $('#cardName').val(name);
+}
+
+function numberToForm (){
+  // var email = forRegex.text.match(/([a-zA-Z0-9._+-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi);
+  var number = forRegex.text.split(/\n/).find((item)=> /[-]{0,1}[\d]*[\.]{0,1}[\d]+/g.test(item)===true);
+  // var name = forRegex.text.match(/^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/)[0];
+
+  $('#cardPhone').val(number);
+  // $('#cardEmail').val(email);
+  // $('#cardName').val(name);
+}
+
+
 
 var input = document.querySelector('#image_uploads');
 var preview = document.querySelector('.preview');

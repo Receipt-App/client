@@ -66,17 +66,25 @@
         <form method="post" enctype="multipart/form-data">
           <div>
             <label for="image_uploads">Choose images to upload (PNG, JPG)</label>
-            <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" onchange="Tesseract.recognize(this.files[0]).then(function(data){ console.log(data)
-              
-            })">
+            <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" onchange="Tesseract.recognize(this.files[0]).then(function(data){ forRegex = data; console.log(data.text);})">
           </div>
           <div class="preview">
             <p>No files currently selected for upload</p>
           </div>
           <div>
-            <button type="button" id="add-card" onclick="card.add()">add card</button>
+            <button type="button" id="add-card" onclick="nameToForm(),emailToForm(), numberToForm()">add card</button>
           </div>
         </form>
+
+        <form id="card-for-db">
+            <input class="input-field" type="text" id="cardName" placeholder="Card name " required>
+            <input class="input-field" type="text" id="cardEmail" placeholder="Card email " required>
+            <input class="input-field" type="text" id="cardPhone" placeholder="Card phone " required>
+            <input class="input-field" type="text" id="cardAddress" placeholder="Card adress" required>
+            <button type="submit">add card</button>      
+            </form>
+
+
         <section>
           <h2>Your Cards</h2>
           <ul id="card-list">
