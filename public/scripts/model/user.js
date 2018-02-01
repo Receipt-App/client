@@ -6,6 +6,8 @@
     var __API_URL__ = "https://pop-server-staging.herokuapp.com"
 
     const user = {};
+    
+    var userFromLocal;
 
     user.add = function(ctx, next) {
         // console.log(ctx);
@@ -31,6 +33,8 @@
         ctx.allusers.map(item=>arr.push (item.username.toUpperCase()));
         if (arr.includes(ctx.curentUser.toUpperCase()) === true){
             localStorage.curentUser = ctx.curentUser;
+            userFromLocal = ctx.curentUser;
+            
             page('/profile');
             next();
             // console.log('checked user from login' , ctx.curentUser);
@@ -48,7 +52,7 @@
         .then(results => {
             $('#card-list').empty();
             results.rows.forEach(function(item) {
-                if (item.name === userFromLocal){
+                // if (item.username === userFromLocal){
                     let card = `
                     <li id='card'>
                     <p>Name: ${item.name}</p>
@@ -58,9 +62,9 @@
                     </li>
                     `;
                     $('#card-list').append(card);
-                } else {
-                    $('#card-list').append('No cards found');
-                }
+                // } else {
+                //     $('#card-list').append('No cards found');
+                // }
             });
         });        
             
