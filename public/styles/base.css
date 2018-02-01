@@ -156,6 +156,7 @@ footer {
 
 button {
   width: 25%;
+  min-width: 90px;
   margin: 0 auto;
   border-radius: 5px;
   background-color: black;
@@ -165,7 +166,7 @@ button {
 
 
 .preview img {
-  width: 400px;
+  width: 80%;
 }
 
 div label {
@@ -176,6 +177,8 @@ div label {
   background-color: black;
   color: #fff;
   margin: 0 auto;
+  line-height: 30px;
+  width: 70%;
 }
 
 .about-color a {
