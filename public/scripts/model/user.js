@@ -80,6 +80,8 @@
 
         var forRegex;
 
+        
+
 
     // user.addnewcard = function(ctx,next) {
     //     console.log(ctx.newcard);
