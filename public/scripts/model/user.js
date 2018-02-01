@@ -46,15 +46,19 @@
         // console.log(ctx);
         $.get(`${__API_URL__}/users/cards`)
         .then(results => {
-        // //     console.log('send request for all cards');
-        // //     // if (err){
-        // //         // $('#profile p').text('You have no card');
-        // //     // } else{
-        // //         // $('#profile p').text(results);
-        // //         // next();
-                console.log(results);
-                console.log(localStorage);
-            });        
+            $('#card-list').empty();
+            results.rows.forEach(function(item) {
+                let card = `
+                <li id='card'>
+                <p>Name: ${item.name}</p>
+                <p>Email: ${item.email}</p>
+                <p>Phone: ${item.email}</p>
+                <p>Additional comment: ${item.other}</p>
+                </li>
+                `;
+                $('#card-list').append(card);
+            });
+        });        
             
             var userFromLocal = localStorage.curentUser;
             console.log(userFromLocal);
