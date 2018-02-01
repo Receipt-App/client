@@ -40,6 +40,10 @@ label {
 }
 
 @media only screen and (max-width: 500px) {
+  body {
+    min-width: 400px;
+  }
+  
   label {
     display: block;
     cursor: pointer;
@@ -59,11 +63,17 @@ label {
   }
 
   #logo {
-    display: none;
+    width: 100px;
+    padding: 0;
   }
-
+  
   .heading {
     font-size: 6vw;
+    display: none;
     text-align: center;
+  }
+
+  #about-us p {
+    font-size: 20px;
   }
 }
