@@ -53,6 +53,13 @@
         <input class="input-field" type="text" id="password" placeholder="Please create password..." required>
         <button type="submit">Submit and return to the home page</button>      
       </form>
+      <form id="update-user-form">
+        <h2>Update User</h2>
+        <input class="input-field" type="text" name="name" value="ctx.name" required>
+        <input class="input-field" type="text" name="email" value="ctx.email" required>
+        <input class="input-field" type="text" name="username" value="username" required>
+        <button id="update-user" type="button">Update</button>
+      </form>
       <section id="upload">
         <h2>Upload a picture of the business card</h2>
         <div class="canvas"></div>
@@ -60,6 +67,8 @@
       <section id="profile">
         <h2>Your Profile</h2>
         <p>*** EMPTY PROFILE ***</p>
+
+        <a href="/update">update</a>
         
         <H2 >ADD A CARD</H2>
         <!-- <input id="upload" type="file" accept="image/*"> -->
@@ -134,6 +143,7 @@
     <script src="scripts/view/create-view.js"></script>
     <script src="scripts/view/about-us.js"></script>
     <script src="scripts/view/profile-view.js"></script>
+    <script src="scripts/view/update-user-view.js"></script>
     <script src="scripts/controller/routes.js"></script>
     
     

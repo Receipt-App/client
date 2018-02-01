@@ -7,6 +7,6 @@ page('/profile', profileView.init, user.loadUserData );
 // page('/profile', user.userData, view.profUser);
 // page('/upload');
 // page('upload');
-
+page('/update', updateView.init)
 
 page();
