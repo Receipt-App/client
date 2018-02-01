@@ -6,6 +6,7 @@
   ////// login view. only login form
 
   loginView.init = function(ctx, next) {
+    localStorage.clear();
     $("form").trigger("reset"); 
     $('#create-user').hide();
     $('#upload').hide();
@@ -20,7 +21,7 @@
     $('#login').on('submit', function(e) {
       e.preventDefault();
       ctx.curentUser = e.target.username.value;
-      console.log(e.target.username.value);
+      // console.log(e.target.username.value);
       next();
     });
   };
