@@ -1,6 +1,6 @@
 body {
-  max-width: 960px;
-  margin: 0 auto;
+  /* max-width: 960px; */
+  /* margin: 0 auto; */
   padding: 0;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 18px;
@@ -8,7 +8,7 @@ body {
 }
 
 main {
-  min-height: 400px;
+  min-height: 655px;
   
 }
 
@@ -81,14 +81,14 @@ main {
 #profile a {
   text-decoration: none;
   display: inline-block;
-  width: 15%;
+  width: 10%;
   min-width: 90px;
   margin: 0 auto;
   border-radius: 5px;
   background-color: black;
   color: #fff;
   font-size: 20px;
-  padding: 3px;
+  padding: 10px;
 
 }
 
@@ -98,13 +98,14 @@ main {
 }
 
 .circle {
-  height: 90px;
-  width: 90px;
+  height: 100px;
+  width: 100px;
   border-radius: 100%;
   border-style: solid;
   border-color: darkgrey;
   border-width: 2px;
   float: left;
+  margin-right: 20px;
 }
 #about-us li {
   text-align: left;
@@ -112,12 +113,18 @@ main {
   background-color: rgba(255, 255, 255, 0.637);
   padding: 15px;
   border-radius: 5px;
-  height: 150px;
+  height: 135px;
   box-sizing: border-box;
 }
 
 #about-us h2 {
   font-weight: bolder;
+  padding-left: 10%;
+  /* margin-bottom: 10px; */
+}
+
+#about-us p {
+  padding-left: 10%;
 }
 
 #about-us li:last-child {
@@ -130,6 +137,8 @@ main {
   width: 80%;
   margin: 15px auto;
   border-radius: 5px;
+  border: 1px black solid;
+  padding: 5px;
 }
 
 form {
@@ -163,15 +172,16 @@ footer {
 }
 
 button {
-  width: 25%;
+  width: 15%;
   min-width: 90px;
   margin: 0 auto;
   border-radius: 5px;
   background-color: black;
   color: #fff;
-  font-size: 15px;
+  font-size: 20px;
+  padding: 8px;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
-
 
 .preview img {
   width: 80%;
@@ -187,6 +197,7 @@ div label {
   margin: 0 auto;
   line-height: 30px;
   width: 70%;
+  padding: 5px;
 }
 
 .about-color a {

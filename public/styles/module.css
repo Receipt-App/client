@@ -42,7 +42,7 @@ label {
 
 @media only screen and (max-width: 500px) {
   body {
-    min-width: 400px;
+    min-width: 430px;
   }
   
   label {
