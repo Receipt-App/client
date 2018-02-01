@@ -5,12 +5,14 @@
 
   ////// login view. only login form
 
-  loginView.init = function(ctx, next) { 
+  loginView.init = function(ctx, next) {
+    $("form").trigger("reset"); 
     $('#create-user').hide();
     $('#upload').hide();
     $('#profile').hide();
     $('#about-us').hide();
     $('#login').show();
+    
 
     $('#login').on('submit', function(e) {
       e.preventDefault();

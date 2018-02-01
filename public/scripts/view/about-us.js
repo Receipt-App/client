@@ -3,6 +3,7 @@
 (function(module) {
   const aboutView = {}; 
   aboutView.init = () => {
+    $("form").trigger("reset"); 
     $('#create-user').hide();
     $('#login').hide();
     $('#profile').hide();

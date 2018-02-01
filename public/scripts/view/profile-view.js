@@ -3,28 +3,44 @@
 (function(module) {
   const profileView = {};
 
-  profileView.init = () => {
+  profileView.init = (ctx, next) => {
+    $('input').trigger('reset'); 
     $('#create-user').hide();
     $('#login').hide();
     $('#profile').show();
     $('#about-us').hide();
+    console.log(ctx);
+    next();
   }
   module.profileView = profileView;
 })(window);
 
-$('#add-card').on('submit', function (e) {
-  e.preventDefault();
-  console.log('add card');
-  // Tesseract.recognize(this.files[0]).progress(function (data) {
 
-  // }
-      // var card = e.target.result;
-      // console.log ('what i want in li',e.target.data);
+function nameToForm (){
+   var name = forRegex.text.match(/^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/);
+   console.log(name);
+   if(name !== null){     
+     $('#cardName').val(name[0]);
+   } else{
+    $('#cardName').val("");
+    
+   }
+  
+}
 
-      // var li = document.createElement(li);
-  // li.text = card;
-  // $('#card-list').append(li);
-})
+function emailToForm (){
+  var email = forRegex.text.match(/([a-zA-Z0-9._+-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi); 
+  $('#cardEmail').val(email);
+ 
+}
+
+function numberToForm (){  
+  var number = forRegex.text.split(/\n/).find((item)=> /[-]{0,1}[\d]*[\.]{0,1}[\d]+/g.test(item)===true);
+  $('#cardPhone').val(number);
+  
+}
+
+
 
 var input = document.querySelector('#image_uploads');
 var preview = document.querySelector('.preview');
