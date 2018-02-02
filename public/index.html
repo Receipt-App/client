@@ -52,27 +52,27 @@
         <button type="submit">Create</button>      
       </form>
     </section>
-    <section id="update-user-form">
+    <!-- <section id="update-user-form">
       <form>
         <h3>Update User</h3>
         <input class="input-field" type="text" name="name" value="ctx.name" required>
         <input class="input-field" type="text" name="email" value="ctx.email" required>
         <input class="input-field" type="text" name="username" value="username" required>
         <button id="update-user" type="button">Update</button>
-      </form>
+      </form> -->
     </section>
     <section id="delete-user">
       <div>
         <h3>Delete User</h3>
         <h4>Are you sure you wish to delete your profile?  All your cards will be lost.</h4>
-        <button type="button" id="delete-user-button">Delete</button>
+        <a id="delete-user-button" href="/">Delete</a>
       </div>
     </section>
     <section id="profile">
       <h3>Your Profile</h3>
       
 
-      <a href="/update">Update</a>
+      <!-- <a href="/update">Update</a> -->
       <a href="/delete">Delete</a>
       <h3>Add a Card</h3>
 
@@ -80,7 +80,7 @@
         
         <div>
           <label for="image_uploads">Choose images to upload (PNG, JPG)</label>
-          <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" onchange="Tesseract.recognize(this.files[0]).then(function(data){ forRegex = data;})">
+          <input class="input-field" type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" onchange="Tesseract.recognize(this.files[0]).then(function(data){ forRegex = data;}).then($('.preview').show())">
         </div>
         <div class="preview">
           <p>No files currently selected for upload</p>
@@ -91,20 +91,20 @@
       </form>
 
 
-        <form id="card-for-db">
-            <input class="input-field" type="text" id="cardName" placeholder="Card name " required>
-            <input class="input-field" type="text" id="cardEmail" placeholder="Card email " required>
-            <input class="input-field" type="text" id="cardPhone" placeholder="Card phone number " required>
-            <input class="input-field" type="text" id="cardAddress" placeholder="Additional Info " required>
-            <button type="submit">Add card</button>      
-        </form>
+      <form id="card-for-db">
+          <input class="input-field" type="text" id="cardName" placeholder="Card name " required>
+          <input class="input-field" type="text" id="cardEmail" placeholder="Card email " required>
+          <input class="input-field" type="text" id="cardPhone" placeholder="Card phone number " required>
+          <input class="input-field" type="text" id="cardAddress" placeholder="Additional Info " >
+          <button type="submit">Add card</button>      
+      </form>
 
 
-        <section>
-          <h3>Your Cards</h3>
-          <ul id="card-list">
-          </ul>
-        </section>
+      <section id="cards">
+        <h3>Your Cards</h3>
+        <ul id="card-list">
+        </ul>
+      </section>
 
       </section>
     </section>
