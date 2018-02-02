@@ -7,7 +7,7 @@ page('/profile', profileView.init, user.loadUserData, user.addnewcard);
 // page('/profile', user.userData, view.profUser);
 // page('/upload');
 // page('upload');
-page('/update', updateView.init);
+// page('/update', updateView.init);
 page('/delete', deleteUserView.init);
 
 page();
